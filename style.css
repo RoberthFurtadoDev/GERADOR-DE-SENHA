@@ -1,81 +1,83 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(119deg, #0e989a, #000000);
-  font-family: 'Nunito', sans-serif;
+/* Reset e configurações base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(119deg, #0e989a, #000000);
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Títulos */
 h2 {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-family: 'Quantico', sans-serif;
-  font-size: 28px;
+  font-size: clamp(24px, 6vw, 28px);
   color: #98d1c7;
+  text-align: center;
+  width: 100%;
 }
 
 h1 {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  margin-top: 20px;
-  transform: translateX(-50%);
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   color: #1da5ea;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 90%;
 }
 
+/* Containers principais */
 .container-pw {
-  position: relative;
-  width: 400px;
-  margin-top: 90px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
 }
 
 .container {
-  position: relative; 
-  background: rgb(15, 15, 15, 0.4);
+  background: rgba(15, 15, 15, 0.4);
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: #2893c9;
-  border-width: 1.5px;
-  border-style: solid;
+  border: 1.5px solid #2893c9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 400px;
-  height: 280px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 280px;
   margin: 0 auto;
 }
 
+/* Caixa de senha */
 .password-box {
   display: flex;
   align-items: center;
-  position: absolute;
   background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px !important;
-  border: #2893c9;
-  border-width: 1.5px;
-  border-style: solid;
-  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1.5px solid #2893c9;
+  margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  bottom: 100%; 
-  padding: 10px 20px; 
+  padding: 12px 15px;
   width: 100%;
-  height: auto;
-  max-width: 100%;
 }
 
 .password-box input {
   flex: 1;
   border: none;
   background: transparent;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  font-size: clamp(16px, 4vw, 18px);
+  color: #fff;
   outline: none;
   font-family: 'Courier Prime', sans-serif;
+  padding: 5px;
 }
 
 .password-box button {
@@ -84,73 +86,72 @@ h1 {
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: clamp(14px, 4vw, 16px);
   transition: 0.3s;
+  min-width: 40px;
 }
 
 .password-box button:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
+/* Opções de configuração */
 .options {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
+  gap: 12px;
   color: white;
   margin-top: 20px;
-}
-
-.length-val {
-  margin-top: 20px;
+  width: 100%;
 }
 
 .options label {
   display: flex;
-  align-items: center; 
+  align-items: center;
+  font-size: clamp(14px, 4vw, 16px);
 }
 
+/* Checkboxes personalizados */
 input[type="checkbox"] {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none; 
-  
+  appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #00D4FF; 
-  border-radius: 4px; 
+  min-width: 20px;
+  border: 2px solid #00D4FF;
+  border-radius: 4px;
   background-color: transparent;
-  cursor: pointer; 
+  cursor: pointer;
   position: relative;
   margin-right: 10px;
-  
 }
 
 input[type="checkbox"]:checked {
-  background-color: #22b0d4; 
+  background-color: #22b0d4;
   border-color: #dbd5df;
 }
 
 input[type="checkbox"]:checked::before {
-  content: '✔'; 
+  content: '✔';
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  font-size: 14px; 
-  color: white; 
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
 }
 
+/* Slider de tamanho */
 input[type="range"] {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   width: 100%;
   height: 8px;
   border-radius: 5px;
   background: #ddd;
   cursor: pointer;
   outline: none;
+  margin: 15px 0;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -159,135 +160,54 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: linear-gradient(to right, #35a2bb var(--progress), #ddd var(--progress));
 }
 
-input[type="range"]::-moz-range-progress {
-  background: #b400cc;
-  height: 8px;
-  border-radius: 5px;
-}
-
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #0bcbd5;
   cursor: pointer;
-  position: relative;
-  z-index: 2;
-  margin-top: -4px;
+  margin-top: -5px;
 }
 
-input[type="range"]::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #37aeb9;
-  cursor: pointer;
-}
-
-#password {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-size: 18px;
-  padding: 5px;
-  color: #fff;
-}
-
-#copy-btn {
-  background: transparent;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#generate-btn{
+/* Botão de gerar senha */
+#generate-btn {
   font-family: 'Nunito', sans-serif;
   background-image: linear-gradient(135deg, #335f5b 0%, #dae6e6 100%);
   color: white;
   border: none;
-  padding: 10px 40px;
+  padding: 12px 30px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: clamp(14px, 4vw, 16px);
   display: block;
-  margin: 0 auto;
-  margin-top: 40px;
+  margin: 25px auto 0;
+  width: 100%;
+  max-width: 200px;
+  transition: transform 0.2s;
 }
 
-button {
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: block;
-  margin: 0 auto;
+#generate-btn:active {
+  transform: scale(0.98);
 }
 
-.text{
-  font-size:30px;
-  font-weight:900;
-  position:fixed;
-  left:50%;
-  transform: translateX(-50%);
-}
-
+/* GitHub Corner */
 .github-corner {
   position: fixed;
   top: 0;
   right: 0;
-  width: 80px; 
+  width: 80px;
   height: 80px;
-  z-index: 9999; 
+  z-index: 9999;
 }
 
 .github-corner svg {
   clip-path: polygon(0 0, 100% 0, 100% 100%);
+  width: 80px;
+  height: 80px;
 }
 
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-
-@keyframes octocat-wave {
-  0% {
-      transform: rotate(0deg);
-  }
-
-  20% {
-      transform: rotate(-25deg);
-  }
-
-  40% {
-      transform: rotate(10deg);
-  }
-
-  60% {
-      transform: rotate(-25deg);
-  }
-
-  80% {
-      transform: rotate(10deg);
-  }
-
-  100% {
-      transform: rotate(0deg);
-  }
-}
-
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-      animation: none;
-  }
-
-  .github-corner .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
-  }
-}
-
+/* Rodapé */
 .made-by {
   position: fixed;
   bottom: 10px;
@@ -301,4 +221,33 @@ button {
 
 .made-by:hover {
   opacity: 1;
+}
+
+/* Media Queries para ajustes específicos */
+@media (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+  
+  .container {
+    padding: 15px;
+  }
+  
+  .password-box {
+    padding: 10px 12px;
+  }
+  
+  #generate-btn {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .options label {
+    font-size: 13px;
+  }
+  
+  .password-box input {
+    font-size: 14px;
+  }
 }
