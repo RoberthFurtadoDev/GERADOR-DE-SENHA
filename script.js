@@ -1,4 +1,3 @@
-// Elementos DOM
 const passwordField = document.getElementById("password");
 const copyBtn = document.getElementById("copy-btn");
 const generateBtn = document.getElementById("generate-btn");
@@ -12,13 +11,11 @@ const themeBtn = document.getElementById("theme-btn");
 const strengthBar = document.querySelector(".strength-bar");
 const strengthText = document.querySelector(".strength-text");
 
-// Caracteres para senha
 const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
 const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+[]{}|;:,.<>?";
 
-// Gerar senha
 function generatePassword() {
     let length = lengthInput.value;
     let charset = "";
@@ -44,11 +41,9 @@ function generatePassword() {
     checkPasswordStrength(password);
 }
 
-// Verificar força da senha
 function checkPasswordStrength(password) {
     let strength = 0;
     
-    // Critérios de força
     if (password.length >= 12) strength += 1;
     if (password.length >= 16) strength += 1;
     if (/[A-Z]/.test(password)) strength += 1;
@@ -59,7 +54,6 @@ function checkPasswordStrength(password) {
     updateStrengthIndicator(strength);
 }
 
-// Atualizar indicador visual de força
 function updateStrengthIndicator(strength) {
     const maxStrength = 6;
     const percentage = (strength / maxStrength) * 100;
@@ -78,7 +72,6 @@ function updateStrengthIndicator(strength) {
     }
 }
 
-// Copiar senha
 function copyToClipboard() {
     if (!passwordField.value || passwordField.value === "Selecione pelo menos uma opção") return;
     
@@ -88,17 +81,14 @@ function copyToClipboard() {
     });
 }
 
-// Alternar tema claro/escuro
 function toggleTheme() {
     document.body.classList.toggle("light-mode");
     document.body.classList.toggle("dark-mode");
-    
-    // Salvar preferência
+
     const isLightMode = document.body.classList.contains("light-mode");
     localStorage.setItem("lightMode", isLightMode);
 }
 
-// Carregar preferência de tema
 function loadThemePreference() {
     const lightMode = localStorage.getItem("lightMode") === "true";
     if (lightMode) {
@@ -107,7 +97,6 @@ function loadThemePreference() {
     }
 }
 
-// Atualizar range background
 function updateRangeBackground() {
     const value = lengthInput.value;
     const min = lengthInput.min;
@@ -116,7 +105,6 @@ function updateRangeBackground() {
     lengthInput.style.setProperty("--progress", percent + "%");
 }
 
-// Event Listeners
 lengthInput.addEventListener("input", () => {
     lengthVal.textContent = lengthInput.value;
     updateRangeBackground();
@@ -126,9 +114,7 @@ generateBtn.addEventListener("click", generatePassword);
 copyBtn.addEventListener("click", copyToClipboard);
 themeBtn.addEventListener("click", toggleTheme);
 
-// Inicialização
 updateRangeBackground();
 loadThemePreference();
 
-// Gerar senha inicial
 generatePassword();
