@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Gerador de Senhas Gratuito</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <h2>GERADOR DE SENHA GRATUITO</h2>
+    <h1>Quer uma senha? Teste nosso criador de senhas seguras agora!</h1>
+  
+  <div class="container-pw"> 
+    <div class="password-box">
+        <input type="text" id="password" readonly>
+        <button id="copy-btn">📋</button>
+    </div>
+
+  <div class="container">
+      <div class="options">
+          <label>Tamanho da senha (caracteres): <span id="length-val">12</span></label>
+          <input type="range" id="length" min="6" max="20" value="12">
+        
+          <label><input type="checkbox" id="uppercase"> Maiúsculas</label>
+          <label><input type="checkbox" id="lowercase"> Minúsculas</label>
+          <label><input type="checkbox" id="numbers"> Números</label>
+          <label><input type="checkbox" id="symbols"> Símbolos</label>
+      </div>
+    
+      <button id="generate-btn">Gerar Senha</button>
+  </div>
+    
+  <div class="made-by">By Roberth Furtado Dev</div>
+
+</body>
+  
+<script src="script.js"></script>
+
+
+</html>
