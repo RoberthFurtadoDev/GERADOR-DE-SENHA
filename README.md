@@ -1,4 +1,4 @@
-# 🔐 Gerador de Senhas -  Sem anuncios - GRÁTIS! 
+# 🔐 Gerador de Senhas -  Sem anúncios - GRÁTIS! 
 
 Gerador de senhas sem anúncios grátis, desenvolvido em HTML, CSS e JavaScript.
 
