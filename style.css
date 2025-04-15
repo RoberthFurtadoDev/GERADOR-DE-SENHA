@@ -8,9 +8,9 @@
   --strength-medium: #ffa502;
   --strength-strong: #2ed573;
   
-  --light-bg: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  --light-bg: linear-gradient(135deg, #000000, #000000);
   --light-text: #333333;
-  --light-container: rgba(143, 150, 154, 0.9);
+  --light-container: rgba(1, 1, 2, 0.9);
   --light-border: #4a6fa5;
   --light-accent: #4a6fa5;
 }
@@ -129,7 +129,7 @@ h1 {
   border: none;
   background: transparent;
   font-size: clamp(16px, 4vw, 18px);
-  color: var(--text-color);
+  color: #ffffff;
   outline: none;
   font-family: 'Courier Prime', monospace;
   padding: 5px;
